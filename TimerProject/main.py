@@ -7,9 +7,15 @@ from tkinter import messagebox
 window = Tk()
 var = StringVar()
 
+def finish():
+
+    messagebox.askyesno(title='Are you sure?', message='Are you sure you want to exit the application?')
+    #if statement etc
+
+
 def click():
     messagebox.showinfo(title='Timer Starting', message='Get ready, the timer is starting.')
-    workmins = 5
+    workmins = 5 #the amount of seconds the timer is going to run.
 
     for x in range(workmins, 0, -1):
         seconds = x % 60
@@ -39,6 +45,9 @@ lb.pack(pady=10)
 
 button = Button(window, command=click,text='Start Pomodoro Timer')
 button.pack()
+
+button2 = Button(window, command=finish, text='Exit')
+button2.pack()
 
 window.mainloop()
 
